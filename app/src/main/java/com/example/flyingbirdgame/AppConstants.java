@@ -10,11 +10,18 @@ public class AppConstants {
      static  int SCREEN_WIDTH , SCREEN_HEIGHT;
     static  BitmapBank bitmapBank;//bitmap object reference
     static GameEngine gameEngine;
+    static int gravity;
+    static int VELOCITY_WHEN_JUMPED;
 
     public static void initialization(Context context){
         setScreenSize(context);
         bitmapBank = new BitmapBank(context.getResources());
         gameEngine = new GameEngine();
+        gravity = 3;
+        AppConstants.gravity = 3;
+        AppConstants.VELOCITY_WHEN_JUMPED=-40;
+
+
     }
     //Return BitmapBank instance
     public static BitmapBank getBitmapBank(){
@@ -36,4 +43,6 @@ public class AppConstants {
         AppConstants.SCREEN_WIDTH = width;
         AppConstants.SCREEN_HEIGHT = height;
     }
+
+
 }
